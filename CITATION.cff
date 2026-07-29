@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this software release and the associated study."
+title: "Auditable Spectral Stress Testing of ImageNet Models"
+type: software
+authors:
+  - family-names: "Koc"
+    given-names: "Mehmet"
+version: "0.2.0"
+date-released: "2026-07-29"
+repository-code: "https://github.com/mehmetkoc1226/spectral-stress-testing"
+license: "NOASSERTION"
+keywords:
+  - spectral robustness
+  - Fourier perturbation
+  - calibration under shift
+  - vision transformers
+  - convolutional neural networks

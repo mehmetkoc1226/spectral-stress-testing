@@ -1,0 +1,41 @@
+{
+  "code_version": "stage1-resumable-2026-07-24-v1",
+  "timm_version": "1.0.28",
+  "run_name": "spectral_stage1_confirmatory_v1",
+  "profile": "paper",
+  "models": [
+    "resnet50_a1",
+    "resnet50_a2",
+    "vitb16_in1k",
+    "vitb16_in21k",
+    "swin_t_in1k",
+    "swin_t_in22k"
+  ],
+  "common_image_size": 224,
+  "common_resize_size": 256,
+  "primary_radii": [
+    10,
+    20,
+    40
+  ],
+  "smooth_radii": [
+    10,
+    20
+  ],
+  "sample_limits": {
+    "imagenette": null,
+    "imagenet_a": null
+  },
+  "base_batch_size": 24,
+  "chunk_size": 128,
+  "num_workers": 2,
+  "mixed_precision": true,
+  "save_selected_full_logits": true,
+  "selected_logit_conditions": [
+    "clean_common",
+    "hard_hp_r020_linear"
+  ],
+  "ece_bins": 15,
+  "bootstrap_reps": 500,
+  "seed": 20260724
+}

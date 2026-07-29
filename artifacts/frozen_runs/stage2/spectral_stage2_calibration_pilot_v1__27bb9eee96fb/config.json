@@ -1,0 +1,59 @@
+{
+  "design_digest": "27bb9eee96fb",
+  "code_version": "stage2-calibration-pilot-2026-07-27-v4",
+  "protocol_version": "stage2-preregistration-v2",
+  "source_analysis_id": "spectral_master_analysis_v2__ecd5548085d9",
+  "run_name": "spectral_stage2_calibration_pilot_v1",
+  "profile": "paper",
+  "models": [
+    "resnet50_a1",
+    "vitb16_in1k",
+    "swin_t_in1k"
+  ],
+  "sample_limits": {
+    "imagenette": null,
+    "imagenet_a": null
+  },
+  "imagenette_conditions": [
+    "clean_common",
+    "hard_lp_r010_linear",
+    "hard_hp_r010_linear",
+    "hard_lp_r020_linear",
+    "hard_hp_r020_linear",
+    "hard_lp_r040_linear",
+    "hard_hp_r040_linear",
+    "gauss_lp_r010_linear",
+    "gauss_hp_r010_linear",
+    "gauss_lp_r020_linear",
+    "gauss_hp_r020_linear",
+    "blur_sigma2",
+    "blur_sigma4",
+    "noise_std010",
+    "noise_std020"
+  ],
+  "imagenet_a_conditions": [
+    "clean_common",
+    "hard_lp_r010_linear",
+    "hard_hp_r010_linear",
+    "hard_lp_r020_linear",
+    "hard_hp_r020_linear",
+    "gauss_lp_r010_linear",
+    "gauss_hp_r010_linear",
+    "gauss_lp_r020_linear",
+    "gauss_hp_r020_linear",
+    "blur_sigma4",
+    "noise_std020"
+  ],
+  "calibration_conditions": [
+    "clean_common",
+    "hard_lp_r020_linear",
+    "hard_hp_r020_linear"
+  ],
+  "calibration_fraction": 0.5,
+  "batch_size": 24,
+  "chunk_size": 128,
+  "num_workers": 2,
+  "mixed_precision": true,
+  "seed": 20260727,
+  "timm_version": "1.0.28"
+}

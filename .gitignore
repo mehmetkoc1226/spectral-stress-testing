@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+.env
+*.log
+runs/
+datasets/
+model_cache/
+release_assets/*.zip

@@ -1,0 +1,182 @@
+[
+  {
+    "key": "clean_native",
+    "family": "clean",
+    "mode": "clean",
+    "radius": null,
+    "postprocess": "none",
+    "geometry": "native",
+    "severity": null
+  },
+  {
+    "key": "clean_common",
+    "family": "clean",
+    "mode": "clean",
+    "radius": null,
+    "postprocess": "none",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_lp_r010_linear",
+    "family": "hard",
+    "mode": "low_pass",
+    "radius": 10,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_hp_r010_linear",
+    "family": "hard",
+    "mode": "high_pass",
+    "radius": 10,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_lp_r020_linear",
+    "family": "hard",
+    "mode": "low_pass",
+    "radius": 20,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_hp_r020_linear",
+    "family": "hard",
+    "mode": "high_pass",
+    "radius": 20,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_lp_r040_linear",
+    "family": "hard",
+    "mode": "low_pass",
+    "radius": 40,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_hp_r040_linear",
+    "family": "hard",
+    "mode": "high_pass",
+    "radius": 40,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "gauss_lp_r010_linear",
+    "family": "gaussian",
+    "mode": "low_pass",
+    "radius": 10,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "gauss_hp_r010_linear",
+    "family": "gaussian",
+    "mode": "high_pass",
+    "radius": 10,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "gauss_lp_r020_linear",
+    "family": "gaussian",
+    "mode": "low_pass",
+    "radius": 20,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "gauss_hp_r020_linear",
+    "family": "gaussian",
+    "mode": "high_pass",
+    "radius": 20,
+    "postprocess": "linear",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_lp_r020_clip",
+    "family": "hard",
+    "mode": "low_pass",
+    "radius": 20,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "hard_hp_r020_clip",
+    "family": "hard",
+    "mode": "high_pass",
+    "radius": 20,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "gauss_lp_r020_clip",
+    "family": "gaussian",
+    "mode": "low_pass",
+    "radius": 20,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "gauss_hp_r020_clip",
+    "family": "gaussian",
+    "mode": "high_pass",
+    "radius": 20,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": null
+  },
+  {
+    "key": "blur_sigma2",
+    "family": "blur",
+    "mode": "blur",
+    "radius": null,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": 2.0
+  },
+  {
+    "key": "blur_sigma4",
+    "family": "blur",
+    "mode": "blur",
+    "radius": null,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": 4.0
+  },
+  {
+    "key": "noise_std010",
+    "family": "noise",
+    "mode": "noise",
+    "radius": null,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": 0.1
+  },
+  {
+    "key": "noise_std020",
+    "family": "noise",
+    "mode": "noise",
+    "radius": null,
+    "postprocess": "clip",
+    "geometry": "common",
+    "severity": 0.2
+  }
+]

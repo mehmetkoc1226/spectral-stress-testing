@@ -1,0 +1,35 @@
+{
+  "code_version": "stage2-calibration-pilot-2026-07-27-v4",
+  "protocol_version": "stage2-preregistration-v2",
+  "run_name": "spectral_stage2_calibration_pilot_v1",
+  "profile": "paper",
+  "source_analysis_id": "spectral_master_analysis_v2__ecd5548085d9",
+  "frozen_stage1_run": "spectral_stage1_confirmatory_v1__7044005bc7a4",
+  "anchor_models": [
+    "resnet50_a1",
+    "vitb16_in1k",
+    "swin_t_in1k"
+  ],
+  "calibration_fraction": 0.5,
+  "calibration_conditions": [
+    "clean_common",
+    "hard_lp_r020_linear",
+    "hard_hp_r020_linear"
+  ],
+  "methods": [
+    "raw",
+    "clean_ts",
+    "confidence_ts",
+    "fcts",
+    "oracle_ts"
+  ],
+  "common_image_size": 224,
+  "common_resize_size": 256,
+  "ece_bins": 15,
+  "base_batch_size": 24,
+  "chunk_size": 128,
+  "num_workers": 2,
+  "mixed_precision": true,
+  "require_gpu": true,
+  "seed": 20260727
+}

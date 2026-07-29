@@ -1,0 +1,10 @@
+numpy
+pandas
+requests
+scikit-learn
+tqdm
+Pillow
+matplotlib
+torch==2.11.0
+torchvision==0.26.0
+timm==1.0.28

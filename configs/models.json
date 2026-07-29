@@ -1,0 +1,50 @@
+{
+  "resnet50_a1": {
+    "timm_name": "resnet50.a1_in1k",
+    "family": "cnn",
+    "architecture": "resnet50",
+    "pair": "resnet50",
+    "role": "anchor",
+    "training": "ImageNet-1K, timm A1 recipe"
+  },
+  "resnet50_a2": {
+    "timm_name": "resnet50.a2_in1k",
+    "family": "cnn",
+    "architecture": "resnet50",
+    "pair": "resnet50",
+    "role": "replication",
+    "training": "ImageNet-1K, timm A2 recipe"
+  },
+  "vitb16_in1k": {
+    "timm_name": "vit_base_patch16_224.augreg_in1k",
+    "family": "global_transformer",
+    "architecture": "vit_base_patch16_224",
+    "pair": "vit_b16",
+    "role": "anchor",
+    "training": "ImageNet-1K, AugReg"
+  },
+  "vitb16_in21k": {
+    "timm_name": "vit_base_patch16_224.augreg_in21k_ft_in1k",
+    "family": "global_transformer",
+    "architecture": "vit_base_patch16_224",
+    "pair": "vit_b16",
+    "role": "replication",
+    "training": "ImageNet-21K pretraining, ImageNet-1K fine-tuning, AugReg"
+  },
+  "swin_t_in1k": {
+    "timm_name": "swin_tiny_patch4_window7_224.ms_in1k",
+    "family": "hierarchical_transformer",
+    "architecture": "swin_tiny_patch4_window7_224",
+    "pair": "swin_t",
+    "role": "anchor",
+    "training": "ImageNet-1K, Microsoft recipe"
+  },
+  "swin_t_in22k": {
+    "timm_name": "swin_tiny_patch4_window7_224.ms_in22k_ft_in1k",
+    "family": "hierarchical_transformer",
+    "architecture": "swin_tiny_patch4_window7_224",
+    "pair": "swin_t",
+    "role": "replication",
+    "training": "ImageNet-22K pretraining, ImageNet-1K fine-tuning"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "timm_name": "vit_base_patch16_224.augreg_in1k",
+  "family": "global_transformer",
+  "architecture": "vit_base_patch16_224",
+  "pair": "vit_b16",
+  "role": "anchor",
+  "training": "ImageNet-1K, AugReg",
+  "data_config": {
+    "input_size": [
+      3,
+      224,
+      224
+    ],
+    "interpolation": "bicubic",
+    "mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "crop_pct": 0.9,
+    "crop_mode": "center"
+  },
+  "normalization_mean": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "normalization_std": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "parameters": 86567656
+}

@@ -1,0 +1,23 @@
+{
+  "project_folder": "Spectral_Sensitivity_Project",
+  "frozen_stage1_run": "spectral_stage1_confirmatory_v1__7044005bc7a4",
+  "gallery_hash_salt": "spectral-gallery-v1-20260728",
+  "gallery_global_index": 2643,
+  "french_horn_global_index": 2203,
+  "tench_global_index": 341,
+  "models": [
+    "resnet50_a1",
+    "resnet50_a2",
+    "vitb16_in1k",
+    "vitb16_in21k",
+    "swin_t_in1k",
+    "swin_t_in22k"
+  ],
+  "geometry": {
+    "resize": 256,
+    "center_crop": 224,
+    "interpolation": "bilinear",
+    "filtering_space": "unnormalized pixel tensor"
+  },
+  "visualization_note": "Signed-linear RGB panels are clipped to [0,1] for display only. Inference used the original signed-linear tensors."
+}

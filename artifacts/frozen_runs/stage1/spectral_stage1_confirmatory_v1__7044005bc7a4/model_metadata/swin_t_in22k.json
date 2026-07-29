@@ -1,0 +1,39 @@
+{
+  "timm_name": "swin_tiny_patch4_window7_224.ms_in22k_ft_in1k",
+  "family": "hierarchical_transformer",
+  "architecture": "swin_tiny_patch4_window7_224",
+  "pair": "swin_t",
+  "role": "replication",
+  "training": "ImageNet-22K pretraining, ImageNet-1K fine-tuning",
+  "data_config": {
+    "input_size": [
+      3,
+      224,
+      224
+    ],
+    "interpolation": "bicubic",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "crop_pct": 0.9,
+    "crop_mode": "center"
+  },
+  "normalization_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalization_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "parameters": 28288354
+}

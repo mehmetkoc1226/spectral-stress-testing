@@ -1,0 +1,8 @@
+{
+  "completed_at": "2026-07-24 16:54:27",
+  "phase": "cross_dataset_replication",
+  "all_jobs_done": true,
+  "completed_jobs": 24,
+  "total_jobs": 24,
+  "run_dir": "/content/drive/MyDrive/Spectral_Sensitivity_Project/runs/spectral_stage1_confirmatory_v1__7044005bc7a4"
+}

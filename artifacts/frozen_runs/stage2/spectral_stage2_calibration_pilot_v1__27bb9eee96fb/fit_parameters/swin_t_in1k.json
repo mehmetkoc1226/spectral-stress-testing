@@ -1,0 +1,161 @@
+{
+  "model": "swin_t_in1k",
+  "design_digest": "27bb9eee96fb",
+  "protocol_version": "stage2-preregistration-v2",
+  "calibration_conditions": [
+    "clean_common",
+    "hard_lp_r020_linear",
+    "hard_hp_r020_linear"
+  ],
+  "n_observations_per_condition": {
+    "clean_common": 1963,
+    "hard_lp_r020_linear": 1963,
+    "hard_hp_r020_linear": 1963
+  },
+  "descriptor_standardization": {
+    "mean": [
+      -0.7291115674812212,
+      0.0924600637035326,
+      0.3380238499306111
+    ],
+    "std": [
+      26.597568436391455,
+      0.11927576060734969,
+      0.2949655637490422
+    ]
+  },
+  "protocols": {
+    "imagenet1000": {
+      "clean_scalar": {
+        "parameters": [
+          -3.2973102170627366
+        ],
+        "initial_temperature": 1.0,
+        "initial_nll": 0.52566299081257,
+        "fitted_nll": 0.4275028705223453,
+        "optimizer_evaluations": 19,
+        "temperature_mean": 0.7614884210528394,
+        "temperature_std": 2.220446049250313e-16,
+        "temperature_min": 0.7614884210528396,
+        "temperature_max": 0.7614884210528396,
+        "regularization": 0.0,
+        "max_iter": 200
+      },
+      "clean_scalar_temperature": 0.7614884210528396,
+      "confidence_standardization": {
+        "mean": [
+          2.3422794351757514,
+          0.45199693381454004,
+          0.48839887416559086
+        ],
+        "std": [
+          2.1783332165991904,
+          0.2462277027598758,
+          0.30336640092867534
+        ]
+      },
+      "confidence_conditioned": {
+        "parameters": [
+          -2.9308105475680724,
+          -0.13517138841731957,
+          0.008798512350932333,
+          -0.023000557782476026
+        ],
+        "initial_temperature": 0.7614884210528396,
+        "initial_nll": 3.9400826876318753,
+        "fitted_nll": 3.506047485907611,
+        "optimizer_evaluations": 29,
+        "temperature_mean": 1.0715650340690344,
+        "temperature_std": 0.1485733098777637,
+        "temperature_min": 0.6964072698926453,
+        "temperature_max": 1.2700437390689112,
+        "regularization": 0.001,
+        "max_iter": 200
+      },
+      "frequency_conditioned": {
+        "parameters": [
+          -2.8755186698862563,
+          -0.28197284545653317,
+          0.4941063046859858,
+          0.2135669227952531
+        ],
+        "initial_temperature": 0.7614884210528396,
+        "initial_nll": 3.9400826876318753,
+        "fitted_nll": 3.324724492693278,
+        "optimizer_evaluations": 35,
+        "temperature_mean": 1.220194941955649,
+        "temperature_std": 0.5545740897138286,
+        "temperature_min": 0.6746122822179084,
+        "temperature_max": 3.118690711274027,
+        "regularization": 0.001,
+        "max_iter": 200
+      }
+    },
+    "restricted10": {
+      "clean_scalar": {
+        "parameters": [
+          -3.880704616174019
+        ],
+        "initial_temperature": 1.0,
+        "initial_nll": 0.00843038930284386,
+        "fitted_nll": 0.0024427688649838308,
+        "optimizer_evaluations": 25,
+        "temperature_mean": 0.453369723738373,
+        "temperature_std": 1.1102230246251565e-16,
+        "temperature_min": 0.4533697237383731,
+        "temperature_max": 0.4533697237383731,
+        "regularization": 0.0,
+        "max_iter": 200
+      },
+      "clean_scalar_temperature": 0.4533697237383731,
+      "confidence_standardization": {
+        "mean": [
+          4.51271924348654,
+          0.34382782089477654,
+          0.738008468843064
+        ],
+        "std": [
+          3.491794826612062,
+          0.38985738553920557,
+          0.32282047682157156
+        ]
+      },
+      "confidence_conditioned": {
+        "parameters": [
+          -2.9215249745063345,
+          0.10580246700815327,
+          -0.4330744725290444,
+          -0.6838273290051058
+        ],
+        "initial_temperature": 0.4533697237383731,
+        "initial_nll": 0.9957125964636107,
+        "fitted_nll": 0.7912526167355179,
+        "optimizer_evaluations": 37,
+        "temperature_mean": 1.0851763133246395,
+        "temperature_std": 0.19440675561047605,
+        "temperature_min": 0.8493134882854284,
+        "temperature_max": 1.5920263621181163,
+        "regularization": 0.001,
+        "max_iter": 200
+      },
+      "frequency_conditioned": {
+        "parameters": [
+          -3.1769849593891997,
+          -0.43861700439302,
+          0.3700092364011663,
+          0.37313710639863135
+        ],
+        "initial_temperature": 0.4533697237383731,
+        "initial_nll": 0.9957125964636107,
+        "fitted_nll": 0.7848750231362688,
+        "optimizer_evaluations": 36,
+        "temperature_mean": 0.9031758850582302,
+        "temperature_std": 0.32265590376887004,
+        "temperature_min": 0.4947045863047226,
+        "temperature_max": 2.028128769494854,
+        "regularization": 0.001,
+        "max_iter": 200
+      }
+    }
+  }
+}

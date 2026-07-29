@@ -1,0 +1,46 @@
+{
+  "success": true,
+  "criteria": {
+    "unseen_family_model_balanced_delta_nll_lt_0": true,
+    "at_least_2_of_3_models_improve_unseen_nll": true,
+    "ece_or_brier_supports": true,
+    "each_model_heldout_clean_delta_nll_le_0_02": true,
+    "accuracy_invariant": true,
+    "top1_invariant": true,
+    "imagenet_a_not_used_for_selection": true
+  },
+  "overall_family_model_balanced_deltas": {
+    "delta_nll": -0.2883116441468398,
+    "delta_ece15": -0.060997354349150185,
+    "delta_brier": -0.039733280992191866
+  },
+  "models_with_unseen_nll_improvement": 3,
+  "heldout_clean_max_delta_nll": 0.0008385777473449707,
+  "per_model_unseen_deltas": [
+    {
+      "model": "resnet50_a1",
+      "delta_nll": -0.22982430017807265,
+      "delta_ece15": -0.06455760981757161,
+      "delta_brier": -0.03542088361626324
+    },
+    {
+      "model": "swin_t_in1k",
+      "delta_nll": -0.2671342735940761,
+      "delta_ece15": -0.05331071868923451,
+      "delta_brier": -0.03452599429610103
+    },
+    {
+      "model": "vitb16_in1k",
+      "delta_nll": -0.3679763586683706,
+      "delta_ece15": -0.06512373454064443,
+      "delta_brier": -0.049252965064211326
+    }
+  ],
+  "top1_invariance": {
+    "comparisons_checked": 2686320,
+    "mismatches": 0,
+    "details": []
+  },
+  "primary_protocol": "imagenet1000",
+  "restricted_protocol_role": "secondary sensitivity analysis"
+}
