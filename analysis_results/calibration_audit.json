@@ -1,0 +1,29 @@
+{
+  "files": 156,
+  "rows": 671580,
+  "shared_index_alignment": true,
+  "top1_mismatches": 0,
+  "nonfinite_records": 0,
+  "correctness_mismatches": 0,
+  "duplicate_index_files": 0,
+  "max_summary_differences": {
+    "accuracy": 1.1102230246251565e-16,
+    "nll": 1.280025244909666e-06,
+    "ece15": 1.215703993853387e-09,
+    "brier": 1.5428260691230378e-07
+  },
+  "probability_floor": 1e-12,
+  "floor_hits": {
+    "raw": 0,
+    "clean_ts": 500,
+    "confidence_ts": 0,
+    "fcts": 0,
+    "oracle_ts": 0
+  },
+  "bootstrap_replicates": 1000,
+  "bootstrap_seed": 20261027,
+  "bootstrap_scope": "One shared image-multiplicity matrix per dataset across all conditions, models, methods and output tasks; datasets independent; fitted calibrators fixed",
+  "ece_convention": "[0,1/15], (1/15,2/15], ..., (14/15,1]",
+  "supplied_code_version": "v3",
+  "archived_run_code_version": "v4; exact v4 notebook not supplied"
+}

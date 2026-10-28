@@ -28,3 +28,12 @@
 ## Artifact boundary
 
 The repository includes compact metadata and aggregate outputs. It excludes raw datasets, pretrained weights, per-image prediction chunks, selected logits, full logits, caches, manuscript sources, compiled articles, and submission materials.
+
+## October submission integration
+
+Added the two completed follow-up experiments without replacing scientific modules.
+The exact historical spectral_stage2_pilot.py under strengthening_experiments/
+retains its original log messages and recorded hash. The language check excludes
+only that frozen upstream file. The two original Colab notebooks now reference
+the existing requirements-gpu.txt and a separate reproduction Drive folder.
+See REPRODUCIBILITY_STATUS.md for current verification scope.

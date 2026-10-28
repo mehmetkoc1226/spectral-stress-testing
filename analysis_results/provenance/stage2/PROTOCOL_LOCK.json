@@ -1,0 +1,12 @@
+{
+  "protocol_version": "stage2-preregistration-v2",
+  "source_analysis_id": "spectral_master_analysis_v2__ecd5548085d9",
+  "primary_success_protocol": "imagenet1000",
+  "primary_unseen_families": [
+    "unseen_radius",
+    "unseen_filter",
+    "natural_corruption",
+    "unseen_dataset"
+  ],
+  "note": "Restricted protocols are secondary sensitivity analyses."
+}

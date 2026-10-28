@@ -1,0 +1,7 @@
+{
+  "source": "Supplied Stage2_v3 notebook text; scientific modules extracted unchanged",
+  "sha256": {
+    "spectral_stage2_core.py": "49566a73121ba950dc6e247402bd6ac0c8e617878b623d871eb162dc0be0db52",
+    "spectral_stage2_pilot.py": "09c86c29c978b7b7a9b417dad67de33f2d5f18e152d8a2bd51ab88f08c0265d2"
+  }
+}

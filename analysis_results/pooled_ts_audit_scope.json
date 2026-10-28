@@ -1,0 +1,15 @@
+{
+  "fit_unique_images": 1963,
+  "fit_conditions": 3,
+  "fit_views_per_model_protocol": 5889,
+  "evaluation_images_per_panel": 256,
+  "panels": 78,
+  "full_evaluation_logits_available": false,
+  "important": "Audit subsets selected separately per model and condition; comparisons within each panel use identical images. No shared-image CI across panels is claimed.",
+  "temperature_bounds": [
+    0.05,
+    20
+  ],
+  "new_backbone_inference": false,
+  "post_hoc": true
+}

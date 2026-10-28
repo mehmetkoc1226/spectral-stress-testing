@@ -1,0 +1,6 @@
+{
+  "B": 1000,
+  "seed": 20261027,
+  "scope": "Fixed checkpoints/calibrators; shared image weights within dataset; independent datasets",
+  "curves": "All predefined grid points reported; no selection from ImageNet-A or held-out test performance"
+}

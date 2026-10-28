@@ -1,101 +1,86 @@
-# Auditable Spectral Stress Testing of ImageNet Models
+# Spectral Stress Tests Reveal Protocol-Dependent Robustness and Calibration in ImageNet Classifiers
 
-This repository contains audited experiment code, configuration files, compact derived results, frozen run metadata, and reproducibility documentation for the spectral stress-testing study.
+Code, frozen experiment specifications and supporting results for the study by Mehmet Koc.
+This merged submission snapshot retains the original Stage-1 and Stage-2 v4
+implementation and adds the completed input-statistics controls and full-cohort
+calibration replay. Existing source, configurations and frozen evidence are retained.
 
-## Scope
+## Start here: verify saved results without a GPU
 
-The study evaluates six public ImageNet checkpoints from ResNet-50, ViT-B/16, and Swin-T under complementary hard and Gaussian spectral interventions, clipping controls, natural corruptions, output-space sensitivity, checkpoint replication, and post-hoc calibration analyses.
+Use Python 3.12. From this repository root:
 
-The repository separates:
+```bash
+python -m pip install -r requirements-analysis.txt pytest
+python tools/verify_reproducibility.py
+```
 
-- **Stage 1:** spectral stress testing, per-image prediction records, paired comparisons, and protocol controls;
-- **Stage 2:** preregistered frequency-conditioned temperature scaling and matched adaptive baselines;
-- **Figure generation:** deterministic qualitative example selection from the frozen Stage-1 run;
-- **Compact artifacts:** derived aggregate tables, exact dataset manifests, completion evidence, fitted calibration parameters, and deterministic qualitative-selection metadata.
+The command runs six lightweight repository tests, twelve numerical checks,
+checks the original/follow-up fitting inputs, and reconciles saved estimates.
+It verifies 96 input-control effects, 30 balanced calibration scores and 108
+calibration effects. A JSON record is written to validation/REPRODUCIBILITY_CHECK.json.
+Reconciliation runs in a temporary directory and leaves frozen records intact.
+The numerical check fixtures are implementation tests, not empirical paper data.
 
-## Source provenance
-
-The canonical source selection and all notebook-level corrections are documented in [`docs/PROVENANCE.md`](docs/PROVENANCE.md). The repository integrates the Stage-1 Gaussian-r20 job-planning patch and the executed Stage-2 v1.4 cache hotfix. These changes affect orchestration and file transport only; the scientific intervention, metric, and calibration definitions are unchanged.
-
-## Quick validation
+For the complete original PyTorch unit/planning suite:
 
 ```bash
 python -m pip install -r requirements-test.txt
-pytest -q
+python -m pytest -q
 ```
 
-The unit tests cover spectral complementarity, deterministic corruption invariance, calibration top-1 invariance, configuration registries, planning smoke tests, and the English-only repository rule.
+The complete suite requires torch and torchvision. GitHub Actions runs that
+suite and the additional saved-result verification on each push.
 
-## Full Colab environment
+## Experiment-to-code map
 
-The recorded GPU experiment environment used:
+| Experiment | Entry point | Included evidence |
+|---|---|---|
+| Six-checkpoint spectral diagnostics | notebooks/Stage1_Confirmatory_Colab.ipynb; src/stage1/run_stage1.py | artifacts/frozen_runs/stage1/: 432 cells, manifests and phase markers |
+| Original calibration on the frozen split | notebooks/Stage2_Calibration_Colab.ipynb; src/stage2/run_stage2.py | artifacts/frozen_runs/stage2/: configuration, 1,963/1,962 split, fit coefficients and 780 summaries |
+| Mean/contrast controls | notebooks/01_Mean_Contrast_Controls.ipynb | analysis_results/strengthening/controls/: 63 jobs, 126 summaries and 96 effects |
+| Full-cohort calibration including pooled scalar | notebooks/02_Full_Calibration_Comparison.ipynb | analysis_results/strengthening/calibration/: 78 jobs, 780 summaries, 30 balanced scores and 108 effects |
 
-- Python 3.12.13
-- PyTorch 2.11.0 + CUDA 12.8
-- torchvision 0.26.0
-- timm 1.0.28
-- NVIDIA Tesla T4
+## Rerun model inference on a GPU
 
-Install the GPU experiment dependencies in a GPU-enabled Colab runtime:
+1. Extract the complete repository ZIP to /content/spectral-stress-testing in
+   Colab, or clone the published submission release there.
+2. Select a GPU runtime and use the recorded environment in the relevant
+   environment.json. Original runs used Python 3.12, timm 1.0.28,
+   torch/torchvision 2.11.0/0.26.0 and a Tesla T4. CUDA variants differ between
+   the original run and follow-up replay; both records are retained.
+3. For the original diagnostic run, run all six phases listed in
+   configs/stage1_paper.json. The notebook starts with checkpoint_replication;
+   change STAGE1_PHASE and rerun its runner cell for each remaining phase.
+4. Run the original calibration notebook. The original-run notebooks use the
+   separate Drive folder CVIU_Original_Reproduction and preserve the required
+   run-name identities. See docs/REPRODUCIBILITY.md for Stage-1 inputs.
+5. Run the two additional notebooks in their stated order. They accept the
+   complete repository ZIP or the prior supplementary ZIP, stage frozen fitting
+   inputs in a separate project, and stream progress into the notebook cells.
 
-```bash
-python -m pip install -r requirements-gpu.txt
-```
+For additional experiments, exact commands and inputs are in
+[docs/ADDITIONAL_EXPERIMENTS.md](docs/ADDITIONAL_EXPERIMENTS.md).
+The calibration preparation step can regenerate fitting-view logits without
+refitting the saved clean-TS/FCTS/CCTS coefficients. The replay runner fits only
+the pooled scalar anew and evaluates methods on identical within-cell logits.
 
-## Stage 1
+## Data, coverage and interpretation
 
-Configure the run with environment variables or use the English Colab notebook in `notebooks/`.
+Imagenette and ImageNet-A are downloaded from their original providers.
+Dataset images, weights and large original per-image/logit caches are not
+redistributed. The repository includes manifests, frozen protocols and fitting
+parameters, aggregate results and recorded paired effects. GPU reruns regenerate
+required inference outputs. Full historical uncertainty reproduction also needs
+the corresponding per-image records and original analysis procedure; see
+[docs/REPRODUCIBILITY_STATUS.md](docs/REPRODUCIBILITY_STATUS.md).
 
-```bash
-export STAGE1_RUN_PROFILE=paper
-export STAGE1_PHASE=checkpoint_replication
-export STAGE1_RUN_NAME=spectral_stage1_confirmatory_v1
-python src/stage1/run_stage1.py
-```
+The original v4 runner remains under src/. The follow-up reference modules
+remain under strengthening_experiments/ with their recorded byte hashes. Core
+Stage-1 and Stage-2 mathematical implementations match structurally; these
+versions are not silently substituted for one another. One frozen upstream
+module retains original non-English log messages to preserve file identity.
 
-Run the remaining phases in the order listed in `configs/stage1_paper.json`. The runner writes atomically and resumes completed chunks.
-
-## Stage 2
-
-Stage 2 is fail-closed with respect to the frozen Stage-1 run and writes to a configuration-hashed output directory.
-
-```bash
-export STAGE2_RUN_PROFILE=paper
-export STAGE2_RUN_NAME=spectral_stage2_calibration_pilot_v1
-python src/stage2/run_stage2.py
-```
-
-Then run the analysis and packaging scripts on the completed Stage-2 run directory:
-
-```bash
-python src/stage2/analyze_stage2.py /path/to/stage2_run --bootstrap-reps 1000
-python src/stage2/package_stage2_results.py /path/to/stage2_run
-```
-
-## Data
-
-Imagenette and ImageNet-A are downloaded from their original public providers by the runners. Dataset images and pretrained model weights are not redistributed in this repository.
-
-Exact dataset and calibration-split manifests from the successful full runs are included under `artifacts/frozen_runs/`. Raw datasets, model weights, prediction chunks, and selected/full logits are not stored in Git history. See [`manifests/README.md`](manifests/README.md).
-
-## Reproducibility status
-
-Static compilation and scientific unit tests pass in the repository build environment. A complete end-to-end GPU rerun is not performed by the repository builder because it requires the paper's CUDA/timm environment, public dataset downloads, pretrained weights, and the frozen Stage-1 artifacts. Frozen completion markers and recorded run metadata document the successful full runs; the validation boundary is summarized in [`docs/TEST_REPORT.md`](docs/TEST_REPORT.md).
-
-## Citation
-
-Citation metadata are provided in [`CITATION.cff`](CITATION.cff). The canonical repository is `https://github.com/mehmetkoc1226/spectral-stress-testing`.
-
-## License
-
-No reuse license is asserted by this preparation package. Select and add an appropriate code license before making the repository public. See [`docs/LICENSING.md`](docs/LICENSING.md).
-
-## Included frozen evidence
-
-The repository includes the compact evidence needed to audit the reported experiment design and aggregate analyses:
-
-- `artifacts/frozen_runs/stage1/`: full-run configuration, environments, manifests, phase markers, model metadata, summary table, and Stage-1 aggregate analyses;
-- `artifacts/frozen_runs/stage2/`: full-run configuration, environments, manifests, fitted method parameters, completion marker, summary table, and calibration comparison analyses;
-- `artifacts/summary_tables/`: compact cross-analysis tables used to check the principal reported results.
-
-The manuscript source and compiled article are intentionally not included in this code repository.
+SHA256SUMS.txt covers the distributed source and scientific records. Re-running
+analyses may change derived files; retain an unmodified copy for hash checks.
+Citation metadata are in CITATION.cff. Existing licensing documentation is
+retained; no new reuse license is asserted by this merge.

@@ -1,0 +1,8 @@
+{
+  "archive_md5": "3df6f0d01a2c9592104656642f5e78a3",
+  "n_images": 3925,
+  "geometry": "PIL RGB; shorter edge 256 bilinear; round-centred 224 crop; float32 /255",
+  "calculation": "Parseval, RGB-channel summed DFT power; DC omitted in numerator and denominator for AC",
+  "new_inference": false,
+  "max_raw_reproduction_error": 1.6956482351559998e-07
+}

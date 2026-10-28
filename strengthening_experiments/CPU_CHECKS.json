@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "n_checks": 12,
+  "checks": [
+    "hard radius 5: complementarity, DC-only restoration, mean/RMS equality",
+    "hard radius 10: complementarity, DC-only restoration, mean/RMS equality",
+    "gaussian radius 5: complementarity, DC-only restoration, mean/RMS equality",
+    "gaussian radius 10: complementarity, DC-only restoration, mean/RMS equality",
+    "constant-channel convention",
+    "undefined nonconstant zero-band rejected",
+    "Pooled scalar optimum matches analytic binary solution",
+    "Right-closed weighted ECE matches literal resampling at boundaries",
+    "Family/model balancing and shared-image calibration CI recover constant paired effect",
+    "Resume accepts the same protocol and rejects a changed protocol",
+    "All 96 planned control contrasts paired correctly; identical records yield zero effects",
+    "Extracted upstream scientific modules match recorded byte hashes"
+  ],
+  "gpu_inference_executed": false,
+  "new_empirical_experiment_results": false
+}

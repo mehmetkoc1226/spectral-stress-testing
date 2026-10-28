@@ -1,0 +1,27 @@
+{
+  "gpu_inference_executed": false,
+  "new_empirical_results": false,
+  "numerical_checks": 12,
+  "original_and_followup_inputs_agree": true,
+  "saved_results": {
+    "status": "passed",
+    "controls_jobs": 63,
+    "controls_image_forwards": 247275,
+    "controls_summary_rows": 126,
+    "controls_contrasts": 96,
+    "calibration_jobs": 78,
+    "calibration_image_forwards": 335790,
+    "calibration_summary_rows": 780,
+    "calibration_paired_contrasts": 108,
+    "calibration_balanced_scores": 30,
+    "all_contrast_points_reconciled_with_summaries": true,
+    "all_balanced_points_recomputed": true,
+    "new_replay_accuracy_invariant_across_calibrators": true,
+    "saved_panel_replay_comparisons": 19968,
+    "saved_panel_replay_prediction_mismatches": 22,
+    "saved_panel_max_abs_logit_difference": 0.0361328125,
+    "note": "Cross-run replay differences are distinct from within-run calibration prediction invariance; original diagnostic results remain archived unchanged."
+  },
+  "file_hashes_verified": 186,
+  "status": "passed"
+}

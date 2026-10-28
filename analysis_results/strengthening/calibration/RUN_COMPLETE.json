@@ -1,0 +1,6 @@
+{
+  "task": "calibration",
+  "rows": 780,
+  "image_forwards": 335790,
+  "logits_retained": true
+}

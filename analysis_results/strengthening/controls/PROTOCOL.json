@@ -1,0 +1,49 @@
+{
+  "batch_size": 24,
+  "controls_sha256": "4ef78410b8f938b2839f2c01b6c815245c04af692b4bceca96bd4fe7164ac643",
+  "curve_grid": [],
+  "fit_parameters_sha256": {
+    "resnet50_a1": "76972b87c662e5018bbcbbefb8fa9ae2b2cb4b8286f1cdb44d14f0eed5888ac3",
+    "swin_t_in1k": "213752caa27522a68ee374c8cfde3d35b407a439123b30afd6652a77bb911a82",
+    "vitb16_in1k": "1d0f954fedf71a503f46be302c26803195c0db241da720300179ea0bc0d2cd75"
+  },
+  "imagenet_a_conditions": [],
+  "imagenette_conditions": [
+    "clean_common",
+    "hard_lp_r010_linear",
+    "hard_lp_r010_rms",
+    "hard_hp_r010_linear",
+    "hard_hp_r010_dc",
+    "hard_hp_r010_rms",
+    "hard_lp_r020_linear",
+    "hard_lp_r020_rms",
+    "hard_hp_r020_linear",
+    "hard_hp_r020_dc",
+    "hard_hp_r020_rms",
+    "gauss_lp_r010_linear",
+    "gauss_lp_r010_rms",
+    "gauss_hp_r010_linear",
+    "gauss_hp_r010_dc",
+    "gauss_hp_r010_rms",
+    "gauss_lp_r020_linear",
+    "gauss_lp_r020_rms",
+    "gauss_hp_r020_linear",
+    "gauss_hp_r020_dc",
+    "gauss_hp_r020_rms"
+  ],
+  "logits_retained": true,
+  "mixed_precision": true,
+  "mode": "full",
+  "models": [
+    "resnet50_a1",
+    "swin_t_in1k",
+    "vitb16_in1k"
+  ],
+  "original_config_sha256": "5430017c51d40ed2070bd114b7bcecf7a3f5b6f78f964bdb87f707e29bb9f67e",
+  "original_run": "spectral_stage2_calibration_pilot_v1__27bb9eee96fb",
+  "runner_sha256": "3e6e38998398bd0e099d410a2e06c5e385ee5a0c62c2ddc7304bb3afca586235",
+  "seed": 20260727,
+  "selection": "No ImageNet-A selection; pooled scalar fitted on original calibration views only; curve grid reported in full",
+  "task": "controls",
+  "version": "spectral-strengthening-20261027-v1"
+}
