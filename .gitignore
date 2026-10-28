@@ -9,3 +9,6 @@ runs/
 datasets/
 model_cache/
 release_assets/*.zip
+
+figures/
+validation/REPRODUCIBILITY_CHECK.json
